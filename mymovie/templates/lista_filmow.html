@@ -1,0 +1,26 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+<body>
+{{ text }}
+
+{% if moze_ogladac %}
+<ul>
+    {% for film in filmy %}
+    <li>{{film}}<a href="{url 'edytuj_film.html' film.id">Edytuj</a> </li>
+    {% endfor %}
+
+</ul>
+
+{% endif %}
+    Siemanko! Witamy na kursie Pytonga!
+</body>
+</html>
